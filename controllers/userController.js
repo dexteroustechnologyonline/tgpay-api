@@ -148,6 +148,31 @@ exports.clentbyphonenumber = catchAsyncErrors(async (req, res) => {
     });
   }
 });
+exports.referallistbysponerNumber = catchAsyncErrors(async (req, res) => {
+  try {
+    const user = await User.find({ referMob: req.params.mobilenumber });
+    res.status(200).json({
+      success: true,
+      user: user,
+    });
+  } catch (error) {
+    res.status(501).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+    res.status(400).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+    res.status(500).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+  }
+});
 
 exports.mobileExist = catchAsyncErrors(async (req, res, next) => {
   try {
