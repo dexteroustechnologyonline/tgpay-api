@@ -42,7 +42,6 @@ const bankTransactionSchema = mongoose.Schema({
   },
   availableAmount: {
     type: Number,
-    required: [true, "Please provide availableAmount"],
   },
   amountafterDeduction: {
     type: Number,
