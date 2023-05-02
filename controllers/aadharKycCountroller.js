@@ -32,8 +32,7 @@ exports.createAadharKyc = catchAsyncErrors(async (req, res, next) => {
 
 exports.GetAadharKycbyUserId = catchAsyncErrors(async (req, res, next) => {
   try {
-    console.log(req.params.id);
-    let aadharkyc = await Aadharkyc.find({ userId: req.params.id });
+    let aadharkyc = await Aadharkyc.findOne({ userId: req.params.id });
 
     if (!aadharkyc) {
       return res.status(500).json({

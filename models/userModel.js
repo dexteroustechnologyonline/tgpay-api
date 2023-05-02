@@ -12,8 +12,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: [true, "Please Enter Your Email"],
-    validate: [validator.isEmail, "Please Enter a valid Email"],
+    default: "tgpay@gmail.com",
   },
   mobile: {
     type: String,
@@ -56,6 +55,7 @@ const userSchema = new mongoose.Schema({
 
   referMob: {
     type: String,
+    default:""
   },
 
   createdAt: {
