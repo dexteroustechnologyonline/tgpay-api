@@ -27,7 +27,7 @@ const bankdetailsSchema = mongoose.Schema({
     // unique: [true, "password already exist"],
   },
   bankAccount: {
-    type: String,
+    type: Number,
     required: [true, "Please enter Bank Account"],
     // unique: [true, "Bank Account already exist"],
   },

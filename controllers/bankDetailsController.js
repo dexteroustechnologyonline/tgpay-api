@@ -89,35 +89,3 @@ exports.GetBankDetailsbyUserId = catchAsyncErrors(async (req, res, next) => {
     });
   }
 });
-
-exports.DeleteBankDetails = catchAsyncErrors(async (req, res, next) => {
-  try {
-    let bankdetail = await Bankdetails.findById(req.params.id);
-    if (!bankdetail) {
-      return res.status(500).json({
-        success: false,
-        message: "bankdetail not found",
-      });
-    }
-    await bankdetail.remove();
-    res.status(200).json({
-      success: true,
-    });
-  } catch (error) {
-    res.status(501).json({
-      success: false,
-      massage: error._message,
-      error: error,
-    });
-    res.status(400).json({
-      success: false,
-      massage: error._message,
-      error: error,
-    });
-    res.status(500).json({
-      success: false,
-      massage: error._message,
-      error: error,
-    });
-  }
-});

@@ -9,19 +9,18 @@ const aadharkycSchema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     required: [true, "User Id Required"],
     ref: "User",
-    unique: [true, "userId already exist"],
   },
   client_id: {
     type: String,
-    required: [true, "Client Id Required"],
+    default: "",
   },
   full_name: {
     type: String,
-    required: [true, "Full Name Required"],
+    default: "",
   },
   aadhaar_number: {
     type: String,
-    required: [true, "Aadhaar Number Required"],
+    default: "",
   },
   dob: {
     type: String,

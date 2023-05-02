@@ -40,6 +40,10 @@ const bankTransactionSchema = mongoose.Schema({
     type: Number,
     required: [true, "Please provide transactioncost"],
   },
+  availableAmount: {
+    type: Number,
+    required: [true, "Please provide availableAmount"],
+  },
   amountafterDeduction: {
     type: Number,
     required: [true, "Please provide amountafterDeduction"],
